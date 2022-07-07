@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     
     public Dictionary<string,bool> gottenAchievements = new Dictionary<string,bool>();
     private float elapsedTime = 0f;
+    private float prevTimescale;
     
     
 
@@ -55,6 +56,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)){
             
             if(!isPaused) {
+                prevTimescale = Time.timeScale;
                 Time.timeScale = 0;
                 pauseMenu = Instantiate(pauseMenuPrefab);
                 
@@ -72,7 +74,7 @@ public class GameManager : MonoBehaviour
             } else {
                 
                 Destroy(pauseMenu);             
-                Time.timeScale = 1;
+                Time.timeScale = prevTimescale;
                 isPaused = false;
             }
         }

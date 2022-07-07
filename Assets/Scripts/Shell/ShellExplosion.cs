@@ -20,6 +20,8 @@ public class ShellExplosion : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        
+        
         // Find all the tanks in an area around the shell and damage them.
         Collider[] colliders = Physics.OverlapSphere(transform.position, m_ExplosionRadius, m_TankMask);
 
@@ -43,6 +45,9 @@ public class ShellExplosion : MonoBehaviour
         m_ExplosionAudio.Play();
         Destroy(m_ExplosionParticles.gameObject, m_ExplosionParticles.main.duration);
         Destroy(gameObject);
+
+        //Reset timescale to 1 when object is destroyed
+        Time.timeScale = 1;
     }
 
     private float CalculateDamage(Vector3 targetPosition,float handicap)

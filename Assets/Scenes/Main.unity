@@ -898,6 +898,9 @@ MonoBehaviour:
   - {fileID: 1435667194}
   - {fileID: 186534019}
   - {fileID: 400458581}
+  isPaused: 0
+  pauseMenuPrefab: {fileID: 7041645497077393895, guid: 1ef61fdc34c553349b0a727b5cf3ea95,
+    type: 3}
 --- !u!4 &1306993284
 Transform:
   m_ObjectHideFlags: 0
